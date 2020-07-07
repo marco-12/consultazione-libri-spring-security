@@ -91,6 +91,14 @@ public class LoginController {
 		model.addAttribute("libro", new Libro());
 		return "add-libro";
 	}
+	
+	 @GetMapping("/vediLibri")
+		public ModelAndView vediLibri() {
+	    	ModelAndView model = new ModelAndView();
+	    	model.setViewName("lista-libri");
+	    	model.addObject("listaLibro",  libroService.findAllLibri());
+			return model;
+		}
 
 
 }
