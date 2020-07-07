@@ -1,4 +1,4 @@
-package it.dstech.configuration;
+package it.dstech.consultazionelibrispring.configuration;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import it.dstech.service.MyUserDetailsService;
+import it.dstech.consultazionelibrispring.service.MyUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

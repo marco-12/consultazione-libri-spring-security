@@ -1,4 +1,4 @@
-package it.dstech.controller;
+package it.dstech.consultazionelibrispring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import it.dstech.models.Libro;
-import it.dstech.models.User;
-import it.dstech.service.LibroService;
-import it.dstech.service.UserService;
+import it.dstech.consultazionelibrispring.models.Libro;
+import it.dstech.consultazionelibrispring.models.User;
+import it.dstech.consultazionelibrispring.service.LibroService;
+import it.dstech.consultazionelibrispring.service.UserService;
 
 import javax.validation.Valid;
 

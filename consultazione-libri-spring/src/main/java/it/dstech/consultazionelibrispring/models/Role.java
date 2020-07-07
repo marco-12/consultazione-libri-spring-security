@@ -1,4 +1,4 @@
-package it.dstech.models;
+package it.dstech.consultazionelibrispring.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,14 +1,14 @@
-package it.dstech.service;
+package it.dstech.consultazionelibrispring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import it.dstech.models.Role;
-import it.dstech.models.User;
-import it.dstech.repository.LibroRepository;
-import it.dstech.repository.RoleRepository;
-import it.dstech.repository.UserRepository;
+import it.dstech.consultazionelibrispring.models.Role;
+import it.dstech.consultazionelibrispring.models.User;
+import it.dstech.consultazionelibrispring.repository.LibroRepository;
+import it.dstech.consultazionelibrispring.repository.RoleRepository;
+import it.dstech.consultazionelibrispring.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,8 +20,8 @@ public class UserService {
     private UserRepository userRepository;
 	@Autowired
     private RoleRepository roleRepository;
+	
 	@Autowired
-    private LibroRepository libroRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     

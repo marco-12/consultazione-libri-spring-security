@@ -1,4 +1,4 @@
-package it.dstech.service;
+package it.dstech.consultazionelibrispring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import it.dstech.models.Role;
-import it.dstech.models.User;
+import it.dstech.consultazionelibrispring.models.Role;
+import it.dstech.consultazionelibrispring.models.User;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
