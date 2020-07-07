@@ -4,12 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import it.dstech.models.Libro;
 import it.dstech.models.User;
+import it.dstech.service.LibroService;
 import it.dstech.service.UserService;
 
 import javax.validation.Valid;
@@ -19,6 +22,9 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private LibroService libroService;
 
     @GetMapping(value={"/", "/login"})
     public ModelAndView login(){
@@ -68,6 +74,23 @@ public class LoginController {
         modelAndView.setViewName("admin/home");
         return modelAndView;
     }
+    
+    @GetMapping("/addLibro")
+	public String addLibro(Libro libro) {
+
+		return "add-libro";
+	}
+
+	@PostMapping("/aggiungiLibro")
+	public String salvaLibro(Libro libro, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "index";
+		}
+
+		libroService.addLibro(libro);
+		model.addAttribute("libro", libroService.findAllLibri());
+		return "add-libro";
+	}
 
 
 }

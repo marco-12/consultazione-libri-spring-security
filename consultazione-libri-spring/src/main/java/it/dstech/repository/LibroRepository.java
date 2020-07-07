@@ -11,7 +11,12 @@ import it.dstech.models.Libro;
 @Repository
 public interface LibroRepository extends JpaRepository<Libro, Integer> {
 	
-	List<Libro> findAll();
+	List<Libro> findAllLibri();
+	
+	
+	boolean existsLibroByAutore(String autore);
+
+	boolean existsLibroByTitolo(String titolo);
 	
 }
 
