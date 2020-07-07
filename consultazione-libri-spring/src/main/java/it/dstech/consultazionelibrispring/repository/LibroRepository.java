@@ -11,7 +11,7 @@ import it.dstech.consultazionelibrispring.models.Libro;
 @Repository
 public interface LibroRepository extends JpaRepository<Libro, Integer> {
 	
-	List<Libro> findAllLibri();
+	List<Libro> findAll();
 	
 	
 	boolean existsLibroByAutore(String autore);

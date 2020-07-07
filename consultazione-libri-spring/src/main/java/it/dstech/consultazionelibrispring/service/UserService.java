@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import it.dstech.consultazionelibrispring.models.Role;
 import it.dstech.consultazionelibrispring.models.User;
-import it.dstech.consultazionelibrispring.repository.LibroRepository;
 import it.dstech.consultazionelibrispring.repository.RoleRepository;
 import it.dstech.consultazionelibrispring.repository.UserRepository;
 

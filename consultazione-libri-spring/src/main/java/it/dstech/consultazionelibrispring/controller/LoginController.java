@@ -64,31 +64,31 @@ public class LoginController {
         return modelAndView;
     }
 
-    @GetMapping(value="/admin/home")
+    @GetMapping(value="/home")
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
         modelAndView.addObject("userName", "Welcome " + user.getUserName() + "/" + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
         modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-        modelAndView.setViewName("admin/home");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
     
     @GetMapping("/addLibro")
-	public String addLibro(Libro libro) {
-
-		return "add-libro";
+	public ModelAndView addLibro(Libro libro) {
+    	ModelAndView model = new ModelAndView();
+    	model.setViewName("add-libro");
+    	model.addObject("libro", new Libro());
+		return model;
 	}
 
 	@PostMapping("/aggiungiLibro")
 	public String salvaLibro(Libro libro, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			return "index";
-		}
 
 		libroService.addLibro(libro);
-		model.addAttribute("libro", libroService.findAllLibri());
+		model.addAttribute("listaLibro", libroService.findAllLibri());
+		model.addAttribute("libro", new Libro());
 		return "add-libro";
 	}
 
