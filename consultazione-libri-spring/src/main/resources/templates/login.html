@@ -14,6 +14,9 @@
 <form th:action="@{/registration}" method="get">
     <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
 </form>
+<form th:action="@{/vediLibri}" method="get">
+    <button class="btn btn-md btn-danger btn-block" type="Submit">Lista Libri</button>
+</form>
 
 <div class="container">
     <img th:src="@{/images/polloVivo.jpg}" class="img-responsive center-block" width="300" height="300" alt="Logo"/>
@@ -32,9 +35,7 @@
         <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
                 th:text="Login"></button>
     </form>
-    <div class="col-md-6" align="right">
-		<a href="/vediLibri" class="btn btn-danger"> Libri Disponibili </a>
-	</div>
+    
 </div>
 </body>
 </html>
